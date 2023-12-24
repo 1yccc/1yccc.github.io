@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <audio src="vedio/bg.mp3" id="aud" autoplay="autoplay" controls="controls" preload="auto"></audio>
+    <style>
+        body{
+            margin: 0;
+            background: url(images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231205123947.png);
+            /*background-repeat: no-repeat;
+	        background-position:top,bottom;*/
+            background-size:cover;  /* 让背景图基于容器大小伸缩 */
+            background-attachment:fixed;        /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定   */    //此条属性必须设置否则可能无效/
+            background-color:#CCCCCC;
+         }
+
+         /*audio{
+            display: none;
+         }
+         */
+        ul,
+        li>p{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .header{
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container{
+            width: 1200px ;
+            height: 100%;
+            /*border: 2px solid black;*/
+            margin: auto;
+        }
+
+        .nav{
+            display: flex;/*盒子*/
+            justify-content: space-between;/*盒子里按相邻排列*/
+            position: fixed;
+            
+        }
+        .nav>li{
+            height: 80px;
+            /*border: 2px solid #000;*/
+            padding: 0 15px;
+            line-height: 80px;
+        }
+        .nav>li>p{
+            height: 80px;
+            border: 2px solid #000;
+            padding: 0 15px;
+            line-height: 80px;
+        }
+        .nav>li :first-child{
+            background-color: #005588;
+            color: #fff;
+        }
+        .nav>li:hover{
+            background-color: #005588;
+            color: #fff;
+        }
+        .nav img{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+        }
+        .banner{
+            width: 1200px;
+            height: 600px;
+            /*border: 2px solid #000;*/
+            margin:1rem auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .banner_set{
+            width: 6000px ;
+            height: 100%;
+            /*border: 2px solid black;*/
+            animation: round 10s linear infinite;
+            margin: auto;
+        }
+        .banner_content{
+            width: 20%;
+            height: 100%;
+            float: left;
+        }
+
+        .banner_content img{
+            width: 100%;
+            height: 100%;
+
+        }
+
+        @keyframes round {
+				0% {
+					margin-left: 0;
+				}
+				
+				12% {
+					margin-left: 0;
+				}
+				
+				25% {
+					margin-left: -100%;
+				}
+				
+				37% {
+					margin-left: -100%;
+				}
+				
+				50% {
+					margin-left: -200%;
+				}
+				
+				62% {
+					margin-left: -200%;
+				}
+				
+				75% {
+					margin-left: -300%;
+				}
+				
+				87% {
+					margin-left: -300%;
+				}
+				
+				100% {
+					margin-left: -400%;
+				}
+            }
+            .img2{
+			max-height: 400px;
+			
+		}
+
+        .p1{
+            width: 100%;
+            /*height: 300px;*/
+            /*border: 2px solid black;*/
+            margin-top: 30px;
+
+        }
+
+        .p1>.container{
+            /*border: 2px solid red;*/
+        }
+
+        .title{
+            font-size:  size 100%; 
+            font-weight: 500;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .p1 .box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;  /*盒子里垂直居中*/
+        }
+
+        .p1 .box>img{
+            display: block;
+            width: 30%;
+            height: 30%;
+        }
+
+        .p1 .box .text{
+            width: 65%;
+        }
+
+        .p2 {
+            width: 100%;
+            /*height: 300px;*/
+            /*border: 2px solid black;*/
+            margin-top: 30px;
+        }
+
+        .p2 .container {
+            /*border: 2px solid purple;*/
+        }
+
+        .p2 .title{
+            margin-bottom: 15px;
+        }
+
+        .p2 .list{
+
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+        .p2 .list>li{
+            width: 25%;
+           /* height: 200px;*/
+            border: 2px solid black;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+            
+        }
+
+        .p2 .list>li:hover{
+            transform: perspective(1000px) rotateY(180deg);
+        }
+
+        .p2 .list>li:hover img {
+            transform: rotateY(180deg);
+        }
+
+        .p2 .list>li>img{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        .p2 .list>li>p{
+            text-align: center;
+        }
+        
+        .p3 {
+            width: 100%;
+            /*height: 300px;*/
+            /*border: 2px solid black;*/
+            margin-top: 30px;
+        }
+
+        .p3 .container {
+            /*border: 2px solid purple;*/
+        }
+
+        .p3 .list{
+
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        }
+        .p3 .list>li{
+        width: 25%;
+        /* height: 200px;*/
+        /*border: 2px solid black;*/
+        }
+
+        .p3 .list>li>a>img{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .p3 .list>li>video{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        .p3 .list>li>p{
+            text-align: center;
+        }
+
+        /* 下拉菜单样式 */
+        .search-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .search-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .search-dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .search-dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .search-dropdown:hover .search-dropdown-content {
+            display: block;
+        }
+
+
+
+
+
+        
+    </style>
+
+
+</head>
+<body>
+    <div class="header">
+        <ul class="container nav">
+        <li>
+            <img src="images/015ec75b30a78fa80121b994b16341.jpg@1280w_1l_2o_100sh.jpg" alt="">
+        </li>
+        <li>
+            <a href="index.html">首页</a>
+        </li>
+        <li>
+            <a href="shipu.html">食谱</a>
+        </li>
+        <li><a href="shicai.html">食材</a>
+        </li>
+        <li><a href="jiaru.html">加入我们</a></li>
+         <!-- 搜索下拉菜单 -->
+         <li class="search-dropdown">
+            <p>搜索</p>
+            <div class="search-dropdown-content">
+                <a href="可乐鸡翅.html">可乐鸡翅</a>
+                <a href="番茄牛腩.html">番茄牛腩</a>
+                <a href="#">选项3</a>
+            </div>
+        </li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <div class="banner_set">
+            <div class="banner_content">
+                <a href="#" target="_blank"><img src="images/E-1103977-460909D7.jpg" alt=""></a>	
+            </div>
+            <div class="banner_content">
+                <a href="#" target="_blank"><img src="images/E-1135599-BC367033.jpg" alt=""></a>
+            </div>
+            <div class="banner_content">
+                <a href="#" target="_blank"><img src="images/fc80d16edc95c9d2da55e893f70cb870.jpg" alt=""></a>
+            </div>
+            <div class="banner_content">
+                <a href="#" target="_blank"><img src="images/fec57f0a850587d73c1fa5892733f0f7.jpg" alt=""></a>
+            </div>
+            <div class="banner_content">
+                <a href="#" target="_blank"><img src="images/65782daa34312036533ea85ee550c7a2.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="p1">
+        <div class="container">
+            <h1 class="title">菜品描述</h1>
+            <div class="box">
+                <img src="images/R-C.png" alt="">
+                <div class="text">
+                    <p>正月初一日正旦节。自年前腊月廿四日祭灶之后，宫眷内臣，即穿葫芦景补子及蟒衣。各家皆蒸点心储肉，将为一二十日之费。三十日，岁暮，即互相拜祝，名曰「辞旧岁」也。大饮大嚼，鼓乐喧阗，为庆贺焉。门旁植桃符板、将军炭，贴门神。室内悬挂福神、鬼判、钟馗等画。床上悬挂金银八宝、西番经轮，或编结黄钱如龙。檐楹插芝麻秸，院中焚柏枝柴，名曰「㷒岁」。正月初一五更起，焚香放纸炮，将门闩或木杠于院地上抛掷三度，名曰「跌千金」。饮椒柏酒，吃水点心，即「扁食」也。或暗包银钱一二于内，得之者以卜一年之吉。是日亦互相拜祝，名曰「贺新年」也。所食之物，如曰「百事大吉盒儿」者，柿饼、荔枝、圆眼、栗子、熟枣共装盛之。又驴头肉，亦以小盒盛之，名曰「嚼鬼」，以俗称驴为鬼也。立春之前一日，顺天府于东直门外「迎春」，凡勋戚、内臣、达官、武士，赴春场跑马，以较优劣。</p>
+                    <a href="https://baike.baidu.com/item/%E9%A5%BA%E5%AD%90/28977">查看更多&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p2">
+        <div class="container">
+            <h1 class="title">菜品展示</h1>
+            <ul class="list">
+                <li>
+                    <img src="images/E-1135599-BC367033.jpg" alt="">
+                    <p>煲仔饭</p>
+                </li>
+                <li>
+                    <img src="images/R-C (3).jpg" alt="">
+                    <p>美味刀削面</p>
+                </li>
+                <li>
+                    <img src="images/65782daa34312036533ea85ee550c7a2.jpg" alt="">
+                    <p>小笼包</p>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="p3">
+        <div class="container">
+            <ul class="list">
+                <li>
+                    <video src="vedio/01.mp4" controls="controls"></video>
+                    <p>八宝饭</p>
+                </li>
+                <li>
+                    <a href="https://www.bilibili.com/video/BV19z4y1S7iE/?spm_id_from=333.337.search-card.all.click"><img src="images/fc80d16edc95c9d2da55e893f70cb870.jpg" alt=""></a>
+                    <p>炖排骨</p>
+                </li>
+                <li>
+                    <a href="https://www.bilibili.com/video/BV1aX4y147T5/?spm_id_from=333.337.search-card.all.click"><img src="images/3895.png_860.png" alt=""></a>
+                    <p>河北驴肉火烧</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <p>联系我们   邮箱：666@66.com</p>
+   
+</body>
+</html>

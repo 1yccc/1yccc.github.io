@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加入我们</title>
+    <style>
+        body{
+            background:url(images/bk.jpg);
+        }
+
+
+         ul,
+        li>p{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .header{
+            width: 100%;
+            height: 80px;
+            /* border: 1px solid red; */
+
+        }
+
+        .container{
+            width: 1200px ;
+            height: 100%;
+            /* border: 2px solid black; */
+            margin: auto;
+            background-color:whitesmoke ;
+        }
+
+        .nav{
+            display: flex;/*盒子*/
+            justify-content: space-between;/*盒子里按相邻排列*/
+            align-items: center;
+        }
+        .nav>li{
+            height: 80px;
+            /*border: 2px solid #000;*/
+            padding: 0 15px;
+            line-height: 80px;
+        }
+
+       
+
+        .nav>li :first-child{
+            background-color: #005588;
+            color: #fff;
+        }
+        .nav>li:hover{
+            background-color: #005588;
+            color: #fff;
+        }
+        .nav img{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+        }
+
+        .con {
+        width: 1000px;
+        height: 360px; 
+        float: left; 
+        margin-top: 90px;
+	    margin-left: 260px;
+	    margin-right: 200px;
+        position: relative; 
+        /* box-shadow: 3px 3px 10px #666; */
+        overflow:hidden;
+    }
+    .con img {
+        width: 1000px;
+        height: 360px;
+    }
+    .con span {
+        width:1000px;
+        height: 390px; 
+        background: #333;
+        position: absolute;
+        left: -1200px;
+        top: 0px;
+        filter: Alpha(opacity=80);
+        -moz-opacity: 0.8; 
+        opacity: 0.8; 
+        padding: 20px; 
+        -webkit-transition: left 0.5s ease;
+    }
+    .con span h1 {
+        height: 30px;
+        color: #fff;
+        font-size:18px;
+        text-align: center;
+        position: relative;
+        left: -500px;
+        -webkit-transition: left 1s ease;
+    }
+    .con span p {
+        line-height: 25px; 
+        font-size:14px; 
+        color: #fff;
+        position: relative; 
+        left: -500px;
+        -webkit-transition: left 1s ease;
+    }
+    .con:hover span {
+        left:0px;
+    }
+    .con:hover span h1 {
+        left: 0px;
+    }
+    .con:hover span p {
+        left: 0px;
+    }
+.tip a{
+	display: block;
+	background-color: antiquewhite;
+	color:#333;
+	border-radius: 10px;
+		
+	
+}
+.tip a:hover{
+	background-color: #C57B7C;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <ul class="container nav">
+        <li>
+            <img src="images/015ec75b30a78fa80121b994b16341.jpg@1280w_1l_2o_100sh.jpg" alt="">
+        </li>
+        <li>
+            <a href="index.html">首页</a>
+        </li>
+        <li>
+            <a href="shipu.html">食谱</a>
+        </li>
+        <li><a href="shicai.html" target="_blank">食材</a>   <!--target是在新的页面打开跳转-->
+        </li>
+        <li><a href="jiaru.html">加入我们</a></li>
+        <li>搜索</li>
+        </ul>
+    </div>
+
+    <div id="Main">
+        <div class="con">
+       <img src="images/015af05c52fb16a801213f265ea39f.jpg@1280w_1l_2o_100sh.jpg">
+            <span style="color: aliceblue">
+              <h1 style="font-size: 30px"> 与我们一起</h1>
+
+              <p style="margin-top: 60px;text-align: center">一起展开一场美食之旅
+
+              </p>
+			<h1 style="font-size: 30px;margin-top: 60px">|报名资格|</h1>
+				   <p style="margin-top: 60px;text-align: center">
+				
+				年满18岁；热爱分享性格外向；有一技之长
+				   </p>
+            </span>
+        </div>
+    </div>
+	
+<div style="position: fixed;margin-left:700px ; margin-top: 600px;background-color: antiquewhite;font-size: 24px;height: 80px;width: 160px;line-height: 80px;border-radius: 10px;text-align: center" class="tip">
+	<a href="https://www.wjx.cn/vm/OYUewvK.aspx" target="_blank">立即应募</a>
+	
+</div>
+
+
+</body>
+</html>
